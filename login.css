@@ -5,6 +5,15 @@
     For .omb_spanOr use @body-bg instead of white.
 */
 
+.centered{
+	text-align: center;
+}
+
+.add-top-margin{
+	margin-top:20px;
+}
+
+
 @media (min-width: 768px) {
     .omb_row-sm-offset-3 div:first-child[class*="col-"] {
         margin-left: 25%;
