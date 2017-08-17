@@ -1,0 +1,19 @@
+.centered{
+	text-align: center;
+}
+
+.add-top-margin{
+	margin-top:20px;
+}
+
+.btn-black-text {
+	color: black;
+}
+
+.title-col {
+	width:70%;
+}
+
+.table {
+	margin-top:20px;
+}
