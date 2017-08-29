@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Voting and Commenting System</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+	
+	
+	<script src="https://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="voteComment.js" async defer></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" href="style.css"></link>
+	
+</head>
+<div id="app">
+  <div class="container-fluid">
+  
+    <ul class="list-group">
+      <post v-for="comment in comments" :post="comment"></post>
+    </ul>
+    
+    <div id="comment-box">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Enter a comment..." v-model="comment" @keyup.enter="postComment">
+        <span class="input-group-btn">
+						<button class="btn btn-primary" type="button" @click="postComment">Submit</button>
+					</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<template id="post-template">
+  <li class="list-group-item">
+    <i class="glyphicon glyphicon-chevron-up" @click="upvote" :class="{disabled: upvoted}"></i>
+    <span class="label label-primary">{{ votes }}</span>
+    <i class="glyphicon glyphicon-chevron-down" @click="downvote" :class="{disabled: downvoted}"></i>
+    <a>{{ post.title }}</a>
+  </li>
+</template>
+
+
+</html>
+
+
