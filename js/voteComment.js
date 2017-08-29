@@ -50,10 +50,12 @@ var vm = new Vue({
   },
   methods: {
     postComment: function() {
+      if (this.comment != ""){
       this.comments.push({
         title: this.comment,
         votes: 0
-      })
+      });
+    }
       this.comment = "";
     }
   }
