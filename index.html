@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title>Voting and Commenting System</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	
-	
-	
-	<script src="https://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
-	<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="voteComment.js" async defer></script>
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
-	<link rel="stylesheet" href="style.css"></link>
-	
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="361410521431-43b6q1svlfdva399jgjkgevfjjmp3k3t.apps.googleusercontent.com">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
-<div id="app">
-  <div class="container-fluid">
-  
-    <ul class="list-group">
-      <post v-for="comment in comments" :post="comment"></post>
-    </ul>
-    
-    <div id="comment-box">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Enter a comment..." v-model="comment" @keyup.enter="postComment">
-        <span class="input-group-btn">
-						<button class="btn btn-primary" type="button" @click="postComment">Submit</button>
-					</span>
-      </div>
+
+<body>
+    <div class="container centered">
+        <header>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>Login/Signup</h1>
+                </div>
+            </div>
+        </header>
+        <div class="row">
+            <div class="col-md-12 add-top-margin">
+                <button class="btn btn-primary"><span class="fa fa-facebook fa-5" aria-hidden="true"></span>&nbspFacebook</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 add-top-margin">
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="#" onclick="signOut();">Sign out</a>
+            </div>
+        </div>
     </div>
-
-  </div>
-
-</div>
-
-<template id="post-template">
-  <li class="list-group-item">
-    <i class="glyphicon glyphicon-chevron-up" @click="upvote" :class="{disabled: upvoted}"></i>
-    <span class="label label-primary">{{ votes }}</span>
-    <i class="glyphicon glyphicon-chevron-down" @click="downvote" :class="{disabled: downvoted}"></i>
-    <a>{{ post.title }}</a>
-  </li>
-</template>
-
+    <script>
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    }
+    </script>
+    <script>
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function() {
+            console.log('User signed out.');
+        });
+    }
+    </script>
+</body>
 
 </html>
-
-
