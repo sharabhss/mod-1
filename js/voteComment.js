@@ -37,13 +37,13 @@ var vm = new Vue({
   el: "#app",
   data: {
     comments: [{
-      title: "Great article!",
+      title: "I love udacity",
       votes: 2
     }, {
-      title: "VueJs commenting system with votes!",
+      title: "I think we should take three days off",
       votes: 5
     }, {
-      title: "The random pun that gets a lot of upvotes",
+      title: "How about the whole week off?",
       votes: 85
     }],
     comment: ""
