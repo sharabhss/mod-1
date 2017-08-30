@@ -25,6 +25,13 @@ a {
   color: orange;
 }
 
+.g-signin2{
+  width: 100%;
+}
+
+.g-signin2 > div{
+  margin: 0 auto;
+}
 
 /* some simple transitions to make the upvote and downvote
 buttons fade in as a visual cue for the user */
