@@ -50,9 +50,9 @@
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     }
-    localStorage.setItem(profile.Name);
+    localStorage.setItem(profile.getName());
     // var userName = localStorage.getItem(profile.Name);
-    alert(localStorage.getItem(profile.Name));
+    alert(localStorage.getItem(profile.getName()));
 </script>
 <script>
     function signOut() {
