@@ -38,11 +38,14 @@
               data-longtitle="true">button</div>
               
           </div>
-          <div class="col-md-4">
+          
              
-          </div>
+          
             <div class="row">
-             <a href="#" onclick="signOut();">Sign out</a>
+             
+            </div>
+        <div class="col-md-4">
+            <a href="#" onclick="signOut();">Sign out</a>
             </div>
       </div>
   </div>
@@ -51,7 +54,7 @@
         var profile = googleUser.getBasicProfile();
         localStorage.setItem('username', profile.getName());
         var userName = localStorage.getItem('username');
-        alert(userName);
+       
         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
         console.log('Name: ' + profile.getName());
         console.log('Image URL: ' + profile.getImageUrl());
