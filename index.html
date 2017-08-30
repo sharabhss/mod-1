@@ -31,12 +31,14 @@
         </div> -->
         <div class="row">
             <div class="col-md-12 add-top-margin">
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <a href="#" onclick="signOut();">Sign out</a>
-            </div>
-        </div>
-    </div>
-    <script>
+              <div class="g-signin2" data-onsuccess="onSignIn" 
+              -theme="light" data-width="300" data-height="50"
+              data-longtitle="true">button</div>
+              <a href="#" onclick="signOut();">Sign out</a>
+          </div>
+      </div>
+  </div>
+  <script>
     function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
@@ -44,15 +46,15 @@
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     }
-    </script>
-    <script>
+</script>
+<script>
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
         auth2.signOut().then(function() {
             console.log('User signed out.');
         });
     }
-    </script>
+</script>
 </body>
 
 </html>
