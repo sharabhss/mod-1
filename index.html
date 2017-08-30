@@ -45,7 +45,8 @@
   <script>
     function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
-        var userName = localStorage.getItem(profile.getName());
+        localStorage.setItem('username', profile.getName());
+        var userName = localStorage.getItem('username');
         alert(userName);
         console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
         console.log('Name: ' + profile.getName());
