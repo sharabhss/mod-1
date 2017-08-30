@@ -57,6 +57,7 @@ var vm = new Vue({
       });
     }
       this.comment = "";
+      localStorage.vue
     }
   }
 });
